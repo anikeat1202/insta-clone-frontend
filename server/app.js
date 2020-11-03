@@ -7,6 +7,11 @@ const { MONGOURI } = require("./src/keys");
 
 require("./models/user")
 
+const router = require("./routes/auth")
+app.use(express.json())
+
+app.use(router)
+
 mongoose.connect(MONGOURI,{useNewUrlParser:true,useUnifiedTopology:true})
 
 mongoose.connection.on("connected",()=>{
