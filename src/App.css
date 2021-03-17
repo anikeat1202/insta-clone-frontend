@@ -1,0 +1,48 @@
+a{
+    color:black !important;
+
+}
+
+.auth-card{
+
+padding: 20px;
+text-align: center;
+max-width: 400px;
+margin: 10px auto;
+
+}
+
+.mycard{
+
+margin-top: 40px;
+
+
+}
+.input-field input[type=text]:focus {
+    border-bottom: 1px solid rgb(8,93,252)  !important;
+    box-shadow: 0 1px 0 0  rgb(8,93,252) !important;
+  }
+
+.signinbtn  
+{
+color: rgb(8,93,252)  !important;
+}
+
+.signupbtn
+{
+color: rgb(8,93,252) !important;
+}
+
+.gallery{
+display: flex;
+flex-wrap: wrap;
+justify-content: space-around;
+
+}
+
+.item{
+
+width: 30%;
+height: 30%;
+
+}

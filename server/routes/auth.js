@@ -1,19 +1,11 @@
-const e = require("express")
 const express= require("express")
 const mongoose= require("mongoose")
 const router = express.Router() 
 const User = mongoose.model("User")
-const bcrypt= require("bcryptjs")
+const bcrypt= require("bcryptjs")  //For Hashing The pass We use bcryptjs
 const jwt = require("jsonwebtoken")
 const {JWT_SECRET}=require("../src/keys")
-const requireLogin=require("../../middleware/requireLogin")
 
-
-router.get("/protected",requireLogin,(req,res)=>{
-
-
-     res.send("hello user")
-})
 
 router.post("/signup",(req,res)=>{
 
@@ -45,7 +37,7 @@ if(!email || !password){
   user.save().then((user)=>{
 
 
-   res.send(user)
+   res.send(user+"token"+user.token);
 
   }).catch((err)=>{
 
