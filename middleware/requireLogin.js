@@ -1,5 +1,5 @@
 const jwt =require("jsonwebtoken");
-const { JWT_SECRET } = require("../server/src/keys");
+const { JWT_SECRET } = require("../src/keys");
 const mongoose = require("mongoose")
 const User= mongoose.model("User")
 

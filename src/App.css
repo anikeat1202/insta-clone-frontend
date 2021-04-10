@@ -46,3 +46,32 @@ width: 30%;
 height: 30%;
 
 }
+
+.home-card{
+
+max-width: 500px;
+height: max-content;
+margin: 20px auto ;
+
+
+
+}
+
+.post{
+
+margin: 20px auto;
+max-width: 500px;
+padding: 20px;
+text-align: center;
+
+}
+
+#toast-container{
+
+
+  top: 50px !important;
+  right: 250px !important;
+ left: auto !important;
+
+
+}
