@@ -8,7 +8,8 @@ import Home from "./components/screens/Home"
 import SignIN from './components/screens/Login';
 import CreatePost from "./components/screens/CreatePost"
 import {reducer,initalState} from "./reducers/userreducer"
-
+import UserProfile from "../src/components/screens/UserProfile"
+import SubscribedUserPost from "../src/components/screens/SubscribedUserPost"
 
 
 export const UserContext= createContext()
@@ -26,7 +27,6 @@ const Routing = function(){
     
     if(user){
       dispatch({type:"USER",payload:user})
-      history.push("/")
 
     }
 
@@ -49,11 +49,17 @@ const Routing = function(){
     <Route path="/signup">
     <Signup></Signup>
     </Route>
-    <Route path="/profile">
+    <Route exact path="/profile">
     <Profile></Profile>
     </Route>
     <Route path="/CreatePost">
       <CreatePost></CreatePost>
+    </Route>
+    <Route path="/profile/:userid">
+      <UserProfile></UserProfile>
+    </Route>
+    <Route path="/myfollowingposts">
+     <SubscribedUserPost></SubscribedUserPost>
     </Route>
     </Switch>
 

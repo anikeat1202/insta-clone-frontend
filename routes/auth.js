@@ -8,7 +8,7 @@ const {JWT_SECRET}=require("../src/keys")
 
 router.post("/signup",(req,res)=>{
 
-const{name,email,password} = req.body
+const{name,email,password,pic} = req.body
 
 if(!email || !password ||!name){
 
@@ -30,7 +30,8 @@ return  res.status(422).json({error:"Please Enter All The Fields"})
 
       email,
       password:hashedpass,
-      name
+      name,
+      pic
 
   })
   user.save().then(user=>{
@@ -80,9 +81,9 @@ User.findOne({email:email}).then((savedUser)=>{
    //res.send({message:"successfully signed in"});
 
     const token= jwt.sign({_id:savedUser._id},JWT_SECRET)
- const {_id,name,email}= savedUser;
+ const {_id,name,email,followers,following,pic}= savedUser;
      
-    res.status(200).send({token,user:{_id,name,email}})
+    res.status(200).send({token,user:{_id,name,email,followers,following,pic}})
 
    }
 

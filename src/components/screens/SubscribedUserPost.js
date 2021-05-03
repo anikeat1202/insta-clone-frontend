@@ -7,13 +7,11 @@ var Home = function(){
 
 
     const {state,dispatch} =useContext(UserContext)
-
-   
     const [data,setData] =useState([]);
 
     useEffect(()=>{
  
-    fetch('allpost',{
+    fetch('/getsubscribedpost',{
     
     headers:{
     Authorization: "Bearer "+localStorage.getItem("jwt"),
@@ -53,8 +51,7 @@ var Home = function(){
         const newData = data.map(item=>{
             if(item._id==result._id){
                 return result
-            }
-            else{
+            }else{
                 return item
             }
         })
@@ -63,7 +60,7 @@ var Home = function(){
     }).catch(err=>{
 
         console.log(err);
-        
+
     })
 
 
@@ -206,7 +203,7 @@ return (
         <div className="card home-card" key={item.id} >
      
    
-        <h5 style={{padding:"6px"}}><Link to={item.postedBy._id !==state._id ?"/profile/"+item.postedBy._id :"/profile/"}> <img style={{width: "30px",height:"30px",borderRadius:"80px"}} src={item?item.pic:"loading"}></img>{item.postedBy.name}</Link>   
+        <h5 style={{padding:"6px"}}><Link to={item.postedBy._id !==state._id ?"/profile/"+item.postedBy._id :"/profile/"}>{item.postedBy.name}</Link>   
          {item.postedBy._id==state._id 
           && <i class="material-icons" style={{float:"right"}} 
           onClick={()=>deletePost(item._id)

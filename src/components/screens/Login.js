@@ -67,7 +67,7 @@ return (
      
    <h4 style={{ fontFamily: "Billabong, sans-serif"}}>SignIn</h4>
    <input type="text"  placeholder="Username or Email" value={email} onChange={(e)=>{setEmail(e.target.value)}}></input>
-   <input type="text" placeholder="Password" value={password} onChange={(e)=>{setPassword(e.target.value)}}></input>
+   <input type="password" placeholder="Password" value={password} onChange={(e)=>{setPassword(e.target.value)}}></input>
    <button className="btn waves-effect waves-light  #2196f3 blue" type="submit" name="action" onClick={()=>PostData()}>Login
     <i class="material-icons right"></i>
   </button>
