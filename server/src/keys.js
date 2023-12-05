@@ -1,7 +1,5 @@
-module.exports={
-
-MONGOURI :"mongodb+srv://anikeat1202:b9LoEpi0HukKfsuA@cluster1.gsvsh.mongodb.net/<dbname>?retryWrites=true&w=majority",
-JWT_SECRET:"MyNameIsAnikeat",
-
-
-}
+module.exports = {
+  MONGOURI:
+    "mongodb+srv://anikeat-1202:FySLE6kfxoRhhzpS@insta-clone.luqba1e.mongodb.net/",
+  JWT_SECRET: "MyNameIsAnikeat",
+};
