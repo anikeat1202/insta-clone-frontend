@@ -25,7 +25,7 @@ const Routing = function () {
     } else {
       history("/signin");
     }
-  }, []);
+  });
 
   return (
     <Routes>

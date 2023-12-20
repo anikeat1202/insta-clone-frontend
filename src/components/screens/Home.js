@@ -34,7 +34,7 @@ var Home = function () {
       .then((res) => res.json())
       .then((result) => {
         const newData = data.map((item) => {
-          if (item._id == result._id) {
+          if (item._id === result._id) {
             return result;
           } else {
             return item;
@@ -62,7 +62,7 @@ var Home = function () {
       .then((res) => res.json())
       .then((result) => {
         const newData = data.map((item) => {
-          if (item._id == result._id) {
+          if (item._id === result._id) {
             return result;
           } else {
             return item;
@@ -91,7 +91,7 @@ var Home = function () {
       .then((result) => {
         console.log(result);
         const newData = data.map((item) => {
-          if (item._id == result._id) {
+          if (item._id === result._id) {
             return result;
           } else {
             return item;
@@ -116,7 +116,7 @@ var Home = function () {
         console.log(result);
 
         const newData = data.filter((item) => {
-          return item._id != result._id;
+          return item._id !== result._id;
         });
         setData(newData);
       })
@@ -137,7 +137,7 @@ var Home = function () {
         console.log(result);
 
         const newData = data.map((item) => {
-          if (item._id == result._id) {
+          if (item._id === result._id) {
             return result;
           } else {
             return item;
@@ -170,10 +170,11 @@ var Home = function () {
                     borderRadius: "80px",
                   }}
                   src={item ? item.pic : "loading"}
+                  alt=""
                 ></img>
                 {item.postedBy.name}
               </Link>
-              {item.postedBy._id == state._id && (
+              {item.postedBy._id === state._id && (
                 <i
                   class="material-icons"
                   style={{ float: "right" }}
@@ -185,7 +186,7 @@ var Home = function () {
             </h5>
 
             <div className="card-image">
-              <img src={item.photo}></img>
+              <img src={item.photo} alt=""></img>
             </div>
 
             <div className="card-content">
@@ -220,7 +221,7 @@ var Home = function () {
                       {record.postedBy.name}{" "}
                     </span>{" "}
                     {record.text}{" "}
-                    {item.postedBy._id == state._id && (
+                    {item.postedBy._id === state._id && (
                       <i
                         class="material-icons"
                         style={{ float: "right" }}
